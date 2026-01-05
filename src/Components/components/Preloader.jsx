@@ -28,7 +28,7 @@ export default function Preloader({ onComplete }) {
 
     return (
         <motion.div
-            className="fixed inset-0 z-[99999] flex items-center justify-center bg-[#2b2b2b]"
+            className="global-preloader fixed inset-0 z-[99999] flex items-center justify-center bg-[#2b2b2b]"
             initial={{ y: 0 }}
             exit={{
                 y: "-100%",

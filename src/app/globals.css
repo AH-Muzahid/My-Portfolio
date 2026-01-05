@@ -106,6 +106,14 @@
   .animate-infinite-scroll {
     animation: infinite-scroll 25s linear infinite;
   }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body.no-preloader .global-preloader {
+  display: none !important;
 }
 
 @keyframes infinite-scroll {

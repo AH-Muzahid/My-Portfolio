@@ -7,7 +7,7 @@ export default function ClientLayout({ children }) {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const hasVisited = sessionStorage.getItem("hasVisited");
+        const hasVisited = sessionStorage.getItem("hasVisited_v2");
         if (hasVisited) {
             setIsLoading(false);
         }
@@ -24,7 +24,7 @@ export default function ClientLayout({ children }) {
 
     const handlePreloaderComplete = () => {
         setIsLoading(false);
-        sessionStorage.setItem("hasVisited", "true");
+        sessionStorage.setItem("hasVisited_v2", "true");
     };
 
     return (

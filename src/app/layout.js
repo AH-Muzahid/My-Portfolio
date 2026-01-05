@@ -10,6 +10,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  if (sessionStorage.getItem("hasVisited_v2")) {
+                    document.body.classList.add("no-preloader");
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <SmoothScroll>
           <ClientLayout>
             {children}

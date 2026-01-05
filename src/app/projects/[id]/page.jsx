@@ -16,15 +16,15 @@ export default function ProjectDetails() {
     return (
         <main className="min-h-screen bg-[#0b0b0b] text-white selection:bg-[#00d150] selection:text-black">
             {/* Navigation / Back Button */}
-            <nav className="fixed top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
-                <Link href="/#project" className="group flex items-center gap-2 text-sm uppercase tracking-widest text-[#00d150] hover:text-white transition-colors duration-300">
+            <nav className="fixed top-0 left-0 w-full z-50 mt-8 md:mt-2 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
+                <Link href="/#project" className="border  border-[#00d150] px-4 py-2 rounded-full group flex items-center gap-2 text-sm uppercase tracking-widest text-[#00d150] hover:text-white transition-colors duration-300">
                     <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
-                    <span>Back to Projects</span>
+                    <span>Back</span>
                 </Link>
             </nav>
 
             {/* Hero Header */}
-            <section className="relative pt-40 pb-20 px-4 md:px-10 lg:px-20 max-w-8xl mx-auto">
+            <section className="relative pt-24 pb-12 px-4 md:px-16 max-w-8xl mx-auto">
                 <div className="mb-10 border-b border-white/10 pb-10">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
                         <div className="max-w-4xl">
@@ -43,7 +43,7 @@ export default function ProjectDetails() {
                                     initial={{ y: "100%" }}
                                     animate={{ y: 0 }}
                                     transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-                                    className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none text-white"
+                                    className="text-5xl md:text-7xl font-black tracking-tight leading-none text-white"
                                 >
                                     {project.title}
                                 </motion.h1>
