@@ -1,66 +1,17 @@
 "use client";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import NexusOrb from "@/Components/components/NexusOrb";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import { MaskedReveal } from "@/Components/ui/MaskedReveal";
 import { useEffect } from "react";
+import { FlipWords } from "@/Components/ui/flip-words";
+import Clock from "@/Components/components/Clock";
+import HeroBackground from "@/Components/components/HeroBackground";
+import SocialDock from "@/Components/components/SocialDock";
 
 export default function Hero() {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springConfig = { damping: 25, stiffness: 100 };
-  const springX = useSpring(mouseX, springConfig);
-  const springY = useSpring(mouseY, springConfig);
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      // Calculate normalized mouse position (-1 to 1)
-      const x = (clientX / innerWidth - 0.5) * 2;
-      const y = (clientY / innerHeight - 0.5) * 2;
-      // Move orb opposite to mouse (parallax) or with mouse? User said "interact".
-      // Let's make it follow loosely but with large range to cover empty spaces.
-      mouseX.set(x * 100);
-      mouseY.set(y * 100);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
-
   return (
-    <section className="section-hero flex flex-col items-center relative min-h-[100vh] pt-32 pb-10">
-      {/* 3D Icon Cloud Background - Floating & Interactive */}
-      <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
-        {/* Mouse Parallax Wrapper */}
-        <motion.div
-          style={{ x: springX, y: springY }}
-          className="w-full h-full flex items-center justify-center"
-        >
-          {/* Infinite Rotation & Wandering Orb */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{
-              opacity: 0.45, // Increased visibility
-              scale: 0.85, // Larger size
-              rotate: 360,
-              x: [0, 300, -300, 150, -150, 0], // Greatly increased experimental wander range
-              y: [0, -150, 150, -100, 100, 0]
-            }}
-            transition={{
-              opacity: { duration: 1.5 },
-              scale: { duration: 1.5 },
-              rotate: { duration: 150, repeat: Infinity, ease: "linear" },
-              x: { duration: 50, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" }, // Long, slow, drifting journey
-              y: { duration: 60, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" }
-            }}
-            className="w-full max-w-[800px] max-h-[800px] flex items-center justify-center" // Removed fixed blur
-          >
-            <NexusOrb />
-          </motion.div>
-        </motion.div>
-      </div>
+    <section className="section-hero flex flex-col items-center relative md:min-h-[100vh] min-h-[60vh] pt-32 pb-10">
+      <HeroBackground />
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
 
@@ -98,16 +49,20 @@ export default function Hero() {
 
           <div className="mt-8 md:mt-10 flex justify-center">
             <MaskedReveal delay={0.8} className="max-w-3xl">
-              <p className="text-lg md:text-2xl lg:text-3xl text-zinc-300 leading-relaxed font-light text-center">
-                Engineering scalable, high-performance web solutions with <span className="text-white font-medium">MongoDB</span>, <span className="text-white font-medium">Express</span>, <span className="text-white font-medium">React</span> & <span className="text-white font-medium">Node.js</span>.
-              </p>
+              <div className="text-lg md:text-2xl lg:text-3xl text-zinc-300 leading-relaxed font-light text-center gap-2">
+                <span>Engineering scalable, high-performance web solutions with </span>
+                <FlipWords words={["Next.js", "React.js", "Node.js", "MongoDB", "Express.js", "Tailwind CSS"]} className="text-[#00d150] font-bold" />
+              </div>
             </MaskedReveal>
           </div>
         </div>
 
         {/* Bottom Info Bar */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-zinc-500 text-xs md:text-sm tracking-widest uppercase items-end">
-          <MaskedReveal delay={1.2} className="md:text-left flex justify-center md:justify-start">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-zinc-400 text-xs md:text-sm tracking-widest uppercase items-end relative">
+          <MaskedReveal delay={1.2} className="md:text-left flex flex-col items-center md:items-start">
+
+            <SocialDock />
+            <Clock />
             <p>Based in Dhaka, BD</p>
           </MaskedReveal>
 
@@ -138,8 +93,6 @@ export default function Hero() {
         </div>
 
       </div>
-
-      {/* Background Gradient/Grain - Optional Polishing */}
 
     </section>
   );
