@@ -35,17 +35,17 @@ export default function ContactModal({ isOpen, onClose }) {
                 () => {
                     setLoading(false);
                     toast.success("Message sent successfully!", {
-                        position: "bottom-center",
-                        autoClose: 3000,
+                        position: "top-center",
+                        autoClose: 2000,
                         hideProgressBar: false,
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: true,
-                        theme: "dark",
+                
                     });
                     setTimeout(() => {
                         onClose();
-                    }, 3500);
+                    }, 2500);
                     e.target.reset();
                 },
                 (error) => {

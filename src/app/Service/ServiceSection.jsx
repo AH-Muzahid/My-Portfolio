@@ -51,7 +51,7 @@ export default function Service() {
                         <div className="flex flex-col gap-6 md:gap-8 order-2 lg:order-1">
                             <MaskedReveal delay={0.2}>
                                 <p className="text-gray-200 text-base md:text-lg leading-relaxed max-w-md">
-                                    We have known for a long time that working with readable text and containing meaning is a source of distractions, and prevents focusing on the layout itself.
+                                    Transforming ideas into digital reality through expert full-stack development. I deliver scalable, high-performance solutions that drive business growth and enhance user engagement.
                                 </p>
                             </MaskedReveal>
 
@@ -80,13 +80,12 @@ export default function Service() {
                                     const rotate = ((index * 57) % 40) - 20;
 
                                     // Pseudo-random delay to make them fall "like rain" (not distinct linear wave)
-                                    // Uses index math to be deterministic but look random
                                     const delay = 0.2 + ((index * 7) % 8) * 0.1;
 
                                     return (
                                         <motion.div
                                             key={index}
-                                            initial={{ y: -200, opacity: 0, rotate: 0 }}
+                                            initial={{ y: -50, opacity: 0, rotate: 0 }}
                                             whileInView={{ y: 0, opacity: 1, rotate: rotate }}
                                             viewport={{ once: false, margin: "100px" }}
                                             transition={{

@@ -1,5 +1,6 @@
 import { Inter, Syne } from 'next/font/google';
 
+import ClientLayout from '@/Components/components/ClientLayout';
 import './globals.css';
 import SmoothScroll from '@/Components/components/SmoothScroll';
 
@@ -10,9 +11,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable}`}>
       <body>
         <SmoothScroll>
-        {children}
+          <ClientLayout>
+            {children}
+          </ClientLayout>
         </SmoothScroll>
-        </body>
+      </body>
     </html>
   );
 }

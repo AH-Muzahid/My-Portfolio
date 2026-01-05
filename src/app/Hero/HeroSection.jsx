@@ -1,4 +1,4 @@
-"use client";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MaskedReveal } from "@/Components/ui/MaskedReveal";
@@ -10,7 +10,7 @@ import SocialDock from "@/Components/components/SocialDock";
 
 export default function Hero() {
   return (
-    <section className="section-hero flex flex-col items-center relative md:min-h-[100vh] min-h-[60vh] pt-32 pb-10">
+    <section id="home" className="section-hero flex flex-col items-center relative md:min-h-[100vh] min-h-[60vh] pt-32 pb-10">
       <HeroBackground />
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
@@ -79,13 +79,13 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mt-12 md:mt-16">
-          <MaskedReveal delay={1.6}>
-            <button className="primary-btn hover:scale-105 active:scale-95 transition-all duration-300 text-sm md:text-base px-8 py-4">
+          <MaskedReveal delay={1.0}>
+            <Link href="#project" className="primary-btn hover:scale-105 active:scale-95 transition-all duration-300 text-sm md:text-base px-8 py-4 flex items-center justify-center">
               View My Work
-            </button>
+            </Link>
           </MaskedReveal>
 
-          <MaskedReveal delay={1.7}>
+          <MaskedReveal delay={1}>
             <button className="px-8 py-4 rounded-full border border-white/10 text-white/80 hover:bg-white/5 hover:text-white transition-all duration-300 backdrop-blur-sm text-sm md:text-base tracking-wide">
               Download CV
             </button>

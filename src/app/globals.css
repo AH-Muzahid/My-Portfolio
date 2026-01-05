@@ -36,6 +36,11 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
   body {
     font-family: var(--font-satoshi);
     background-color: #0b0b0b;
@@ -107,6 +112,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-100%);
   }

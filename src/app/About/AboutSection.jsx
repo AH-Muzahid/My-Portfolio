@@ -4,9 +4,14 @@ import Image from "next/image";
 import AboutImage from '@/../public/assets/About2.png';
 import { MaskedReveal } from "@/Components/ui/MaskedReveal";
 
+import { useState } from "react";
+import ContactModal from "@/Components/components/ContactModal";
+
 export default function About() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <section className="w-full bg-gradient-to-b from-[#164b2b] to-[#1e1e1e] py-16 px-4 md:px-8 lg:px-16 xl:px-24">
+    <section id="about" className="w-full bg-gradient-to-b from-[#164b2b] to-[#1e1e1e] py-16 px-4 md:px-8 lg:px-16 xl:px-24">
       <div className="max-w-4xl mx-auto text-center mb-16">
         <div className="flex justify-center mb-6">
           <MaskedReveal>
@@ -78,13 +83,21 @@ export default function About() {
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
             <MaskedReveal delay={0.6}>
-              <button className="bg-[#10b94c] hover:bg-[#0e9f41] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-[#10b94c]/30 transform hover:-translate-y-1">
-                CONTACT ME
-              </button>
+              <a
+                href="https://wa.me/01312009084"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#10b94c] hover:bg-[#0e9f41] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-[#10b94c]/30 transform hover:-translate-y-1 block text-center"
+              >
+                Hire Me
+              </a>
             </MaskedReveal>
 
             <MaskedReveal delay={0.7}>
-              <div className="flex items-center gap-4 group cursor-pointer">
+              <div
+                className="flex items-center gap-4 group cursor-pointer"
+                onClick={() => setIsModalOpen(true)}
+              >
                 <div className="bg-white/10 rounded-full p-3 flex items-center justify-center transition-colors group-hover:bg-[#10b94c]/20">
                   <svg className="w-6 h-6 text-[#10b94c]" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -99,6 +112,8 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section >
   );
 }

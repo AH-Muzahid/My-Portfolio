@@ -1,25 +1,25 @@
 "use client";
-import React, { use } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { MaskedReveal } from "@/Components/ui/MaskedReveal";
 import { ArrowLeft, Github, Globe, Server, Code } from "lucide-react";
 import { projects } from "@/Data/projects";
 
-export default function ProjectDetails({ params }) {
-    // Unwrap params using React.use()
-    const resolvedParams = use(params);
-    const projectId = parseInt(resolvedParams.id);
+export default function ProjectDetails() {
+    const params = useParams();
+    const projectId = parseInt(params.id);
     const project = projects.find(p => p.id === projectId) || projects[0];
 
     return (
         <main className="min-h-screen bg-[#0b0b0b] text-white selection:bg-[#00d150] selection:text-black">
             {/* Navigation / Back Button */}
             <nav className="fixed top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
-                <Link href="/" className="group flex items-center gap-2 text-sm uppercase tracking-widest text-[#00d150] hover:text-white transition-colors duration-300">
+                <Link href="/#project" className="group flex items-center gap-2 text-sm uppercase tracking-widest text-[#00d150] hover:text-white transition-colors duration-300">
                     <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
-                    <span>Back to Home</span>
+                    <span>Back to Projects</span>
                 </Link>
             </nav>
 

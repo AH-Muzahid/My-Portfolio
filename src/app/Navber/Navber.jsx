@@ -4,19 +4,48 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const navLinks = [
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Project', href: '#project' },
+  { name: 'Service', href: '#service' }
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Handle Navbar background
       if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
+
+      // Handle Active Section
+      const sections = navLinks.map(link => document.querySelector(link.href));
+
+      let current = "";
+      sections.forEach((section) => {
+        if (section) {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= sectionTop - 150) { // Offset for navbar height + buffer
+            current = "#" + section.getAttribute("id");
+          }
+        }
+      });
+
+      // Special case for top of page
+      if (window.scrollY < 100) {
+        current = "#home";
+      }
+
+      setActiveSection(current);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,26 +60,32 @@ export default function Navbar() {
 
           {/* Logo Area */}
           <div className="flex items-center pl-4">
-            <div>
+            <Link href="/" className="cursor-pointer hover:opacity-80 transition-opacity">
               <Image
                 className="w-12 h-auto"
                 src="/assets/logo.png" alt="logo" width={100} height={100} />
-            </div>
+            </Link>
           </div>
 
           {/* Navigation Links - Desktop */}
-          <ul className="hidden md:flex items-center gap-6 text-[14px] font-medium text-zinc-300 tracking-tight">
-            <li><Link href="#about" className="transform-gpu transition-transform duration-500 perspective-1000 hover:-translate-y-1 hover:scale-105">About</Link></li>
-            <li><Link href="#project" className="transform-gpu transition-transform duration-500 perspective-1000 hover:-translate-y-1 hover:scale-105">Project</Link></li>
-            <li><Link href="#service" className="transform-gpu transition-transform duration-500 perspective-1000 hover:-translate-y-1 hover:scale-105">Service</Link></li>
-            <li><Link href="#pricing" className="transform-gpu transition-transform duration-500 perspective-1000 hover:-translate-y-1 hover:scale-105">Pricing</Link></li>
-            <li><Link href="#gallery" className="transform-gpu transition-transform duration-500 perspective-1000 hover:-translate-y-1 hover:scale-105">Gallery</Link></li>
+          <ul className="hidden md:flex items-center gap-6 text-[14px] font-medium tracking-tight">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  className={`transform-gpu transition-all duration-300 hover:-translate-y-1 hover:scale-105 ${activeSection === link.href ? "text-[#00d150] font-bold" : "text-zinc-300 hover:text-white"
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
           </ul>
 
           {/* Contact Button - Desktop */}
-          <button className="hidden md:block primary-btn hover:bg-white/90 transition-all duration-500 hover:scale-99">
+          <Link href="#contact" className="hidden md:block primary-btn hover:bg-white/90 transition-all duration-500 hover:scale-99">
             Contact
-          </button>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -99,19 +134,20 @@ export default function Navbar() {
             className="fixed top-21 left-1/2 transform -translate-x-1/2 w-full bg-[#154628] border border-[#ffffff2e] rounded-3xl p-6 shadow-2xl backdrop-blur-md z-50 md:hidden"
           >
             <ul className="flex flex-col gap-4 text-center">
-              {['About', 'Works', 'Service', 'Pricing', 'Gallery'].map((item, index) => (
+              {navLinks.map((item, index) => (
                 <motion.li
-                  key={item}
+                  key={item.name}
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1, duration: 0.3 }}
                 >
                   <Link
-                    href="#"
-                    className="block py-3 px-4 text-zinc-300 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300 text-lg font-medium"
+                    href={item.href}
+                    className={`block py-3 px-4 rounded-xl transition-all duration-300 text-lg font-medium ${activeSection === item.href ? "text-[#00d150] bg-white/10" : "text-zinc-300 hover:text-white hover:bg-white/10"
+                      }`}
                     onClick={toggleMenu}
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </motion.li>
               ))}
@@ -122,7 +158,7 @@ export default function Navbar() {
                 className="border-t border-white/20 pt-4 mt-2"
               >
                 <Link
-                  href="#"
+                  href="#contact"
                   className="primary-btn hover:bg-white/90 rounded-full transition-all duration-300 text-lg"
                   onClick={toggleMenu}
                 >

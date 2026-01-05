@@ -9,7 +9,7 @@ export default function Contact() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
-        <section id="contact" className=" w-full md:py-32 py-10 bg-[#2b2b2b] relative overflow-hidden flex flex-col items-center justify-center min-h-[50vh]">
+        <section id="contact" className=" w-full md:py-32 py-10 bg-[#2b2b2b] relative overflow-hidden flex flex-col items-center justify-center min-h-[50vh] max-h-[100vh]">
 
             {/* Background Decoration - center circles */}
             <div className="absolute inset-0 flex items-center justify-center">
