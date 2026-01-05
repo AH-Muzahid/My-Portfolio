@@ -1,10 +1,13 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import AboutImage from '@/../public/assets/About2.png';
 import { motion } from 'framer-motion';
+import ContactModal from '@/Components/components/ContactModal';
 
 export default function Contact() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <section id="contact" className=" w-full md:py-32 py-10 bg-[#2b2b2b] relative overflow-hidden flex flex-col items-center justify-center min-h-[50vh]">
 
@@ -74,12 +77,13 @@ export default function Contact() {
                     transition={{ duration: 0.6, delay: 0.6 }}
                     className="mt-12 md:mt-16 z-30 relative"
                 >
-                    <button className="px-10 py-4 rounded-full border border-[#00d150] text-[#00d150] hover:bg-[#00d150] hover:text-white transition-all duration-300 text-sm md:text-lg uppercase tracking-widest font-semibold">
+                    <button onClick={() => setIsModalOpen(true)} className="px-10 py-4 rounded-full border border-[#00d150] text-[#00d150] hover:bg-[#00d150] hover:text-white transition-all duration-300 text-sm md:text-lg uppercase tracking-widest font-semibold">
                         Contact Now
                     </button>
                 </motion.div>
 
             </div>
+            <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 }
