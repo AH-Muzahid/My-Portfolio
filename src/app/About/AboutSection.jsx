@@ -66,9 +66,14 @@ export default function About() {
           </MaskedReveal>
 
           <MaskedReveal delay={0.5}>
-            <p className="text-zinc-400 text-base md:text-lg mb-8 leading-relaxed">
-              As a dedicated Full Stack Developer, I merge creativity with technical expertise to deliver seamless digital experiences. Whether it&apos;s crafting responsive front-end interfaces with React & Next.js or architecting robust back-end systems with Node.js & Express, I ensure every line of code adds value. My goal is to help you achieve your digital ambitions.
-            </p>
+            <div className="text-zinc-400 text-sm md:text-base mb-8 leading-relaxed space-y-4 font-light text-justify">
+              <p>
+                My journey into tech started with a curiosity for how things work, which quickly turned into a passion for solving complex problems through code. I love building high-performance web applications that bridge the gap between powerful functionality and beautiful design, specializing in the MERN stack and Next.js.
+              </p>
+              <p>
+                When I’m not coding, I’m exploring my creative side through photography or staying active with sports. I believe that a balanced life fuels a sharper mind, and I bring that same energy and holistic perspective to every project I collaborate on.
+              </p>
+            </div>
           </MaskedReveal>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">

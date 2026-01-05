@@ -33,8 +33,8 @@ export default function Navbar() {
           <div className="flex items-center pl-4">
             <div>
               <Image
-                className="w-13"
-                src="/logo.png" alt="logo" width={100} height={100} />
+                className="w-12 h-auto"
+                src="/assets/logo.png" alt="logo" width={100} height={100} />
             </div>
           </div>
 

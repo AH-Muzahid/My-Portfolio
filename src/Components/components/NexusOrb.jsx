@@ -91,7 +91,8 @@ const IconGrid = () => {
                 const pos = getIconPosition(nextIndex);
                 const iconCenterX = svgCenter + pos.transformX;
                 const iconCenterY = svgCenter + pos.transformY;
-                for (let i = 0; i < 20; i++) {
+                // Performance Optimization: Reduced particles from 20 to 5
+                for (let i = 0; i < 5; i++) {
                     particlesRef.current.push({
                         x: iconCenterX,
                         y: iconCenterY,

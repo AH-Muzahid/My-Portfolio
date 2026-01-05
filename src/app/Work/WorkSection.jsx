@@ -90,7 +90,7 @@ export default function WorkSection() {
 
   return (
     <section ref={container} className="bg-[#111] relative">
-      <div className="py-12 md:py-32 px-4 md:px-8">
+      <div className="pt-12 md:pt-32 pb-24 md:pb-64 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-32">
           <MaskedReveal>
             <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 md:mb-6 tracking-tight">

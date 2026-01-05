@@ -25,7 +25,7 @@ const services = [
 
 export default function Service() {
     return (
-        <section id="service" className="md:min-h-screen md:flex md:items-center md:justify-center bg-[#0b0b0b] relative overflow-hidden py-5">
+        <section id="service" className="md:min-h-screen md:flex md:items-center md:justify-center bg-[#1f1f1f] relative overflow-hidden py-10 ">
             <div className="container mx-auto px-4 md:px-8 max-w-7xl w-full">
 
                 {/* Section Title - Compact margin */}
