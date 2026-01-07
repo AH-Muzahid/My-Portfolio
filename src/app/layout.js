@@ -6,6 +6,14 @@ import SmoothScroll from '@/Components/components/SmoothScroll';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
+export const metadata = {
+  title: "Muzahid | Full Stack Developer",
+  description: "Portfolio of Ali Hasan Muzahid, a Full Stack Developer specializing in MERN Stack and Next.js.",
+  icons: {
+    icon: "/assets/logo.png", // Using the logo from assets
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable}`}>

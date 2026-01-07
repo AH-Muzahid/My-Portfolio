@@ -13,6 +13,12 @@ export default function ProjectDetails() {
     const projectId = parseInt(params.id);
     const project = projects.find(p => p.id === projectId) || projects[0];
 
+    useEffect(() => {
+        if (project) {
+            document.title = `${project.title} | Muzahid`;
+        }
+    }, [project]);
+
     return (
         <main className="min-h-screen bg-[#0b0b0b] text-white selection:bg-[#00d150] selection:text-black">
             {/* Navigation / Back Button */}
