@@ -64,6 +64,9 @@ export default function About() {
 
         <div className="lg:pl-8 pt-8 lg:pt-0">
           <MaskedReveal delay={0.4}>
+            <p className="text-[#10b94c] uppercase tracking-widest text-sm font-semibold mb-2">
+              About Ali Hasan Muzahid
+            </p>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Elevating Businesses with <br className="hidden xl:block" />
               Modern <span className="text-[#10b94c]">Web Solutions</span>
