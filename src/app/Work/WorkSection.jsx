@@ -22,7 +22,10 @@ const Card = ({ i, id, title, description, technologies, src, url, color, progre
         style={{ scale, top: `calc(${i * 25}px)` }}
         className="flex flex-col relative h-[500px] md:h-[600px] w-[95%] md:w-[90%] lg:w-[1200px] rounded-[24px] md:rounded-[30px] p-6 md:p-12 origin-top shadow-2xl border border-white/5"
       >
-        <div className="absolute inset-0 rounded-[24px] md:rounded-[30px] bg-[#1a1a1a] -z-10" />
+        <div
+          className="absolute inset-0 rounded-[24px] md:rounded-[30px] -z-10"
+          style={{ backgroundColor: color }}
+        />
 
         <div className="flex flex-col md:flex-row h-full gap-6 md:gap-12">
           {/* Image Container */}
@@ -32,7 +35,7 @@ const Card = ({ i, id, title, description, technologies, src, url, color, progre
                 fill
                 src={src}
                 alt={title}
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 group-hover:scale-99"
               />
             </motion.div>
             <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
@@ -89,7 +92,12 @@ export default function WorkSection() {
   });
 
   return (
-    <section id="project" ref={container} className="bg-[#111] relative">
+    <section
+      id="project"
+      ref={container}
+      className="relative"
+      style={{ backgroundImage: 'linear-gradient(#000000, #154628 51%)' }}
+    >
       <div className="pt-12 md:pt-32 md:pb-64 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center mb-0">
           <MaskedReveal>

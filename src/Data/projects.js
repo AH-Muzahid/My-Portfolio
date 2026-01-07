@@ -1,71 +1,91 @@
-import WorkImage from '@/../public/assets/Work1.webp';
+// Project 1 Images (FinEase)
+import P1Home from '@/../public/assets/1/home.png';
+import P1Dash from '@/../public/assets/1/dash.png';
+import P1Add from '@/../public/assets/1/add.png';
+import P1Profile from '@/../public/assets/1/profile.png';
+
+// Project 2 Images (LoanLink)
+import P2Home from '@/../public/assets/2/home.png';
+import P2Dash from '@/../public/assets/2/dash.png';
+import P2Emi from '@/../public/assets/2/emi.png';
+import P2Foot from '@/../public/assets/2/foot.png';
+
+// Project 3 Images (GameHub)
+import P3Home from '@/../public/assets/3/home.png';
+import P3All from '@/../public/assets/3/all.png';
+import P3Profile from '@/../public/assets/3/prrofile.png';
 
 export const projects = [
     {
         id: 1,
-        title: "Project Title 1",
+        title: "FinEase - Money Tracker",
         category: "Full Stack Development",
-        client: "Tech Solutions Inc.",
+        client: "Personal Project",
         year: "2025",
-        description: "A comprehensive MERN stack application built for high-performance data management. This solution provided the client with a robust foundation for their future digital expansion, featuring real-time updates and secure authentication.",
-        challenge: "The main challenge was to integrate legacy systems with modern web technologies while maintaining zero downtime during the migration process. Handling large-scale real-time data synchronization was also a key hurdle.",
-        solution: "We implemented a microservices architecture using Node.js and Express. MongoDB's aggregation framework was utilized for complex queries. React Query handled server state efficiently on the frontend.",
-        technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Redux Toolkit", "Tailwind CSS", "JWT Auth"],
+        description: "A comprehensive personal finance management platform designed to help users track expenses, set budgets, and achieve financial goals with clarity and confidence. It features an intuitive dashboard for monitoring financial health in real-time.",
+        challenge: "The main challenge was to create a seamless user experience for tracking complex financial data while ensuring top-tier security for sensitive user information. Implementing real-time updates and family sync features also posed significant architectural hurdles.",
+        solution: "Developed a robust full-stack solution using the MERN stack. We implemented secure JWT authentication and 256-bit encryption for data safety. The dashboard utilizes advanced charting libraries for data visualization, and the backend is optimized for handling real-time transaction updates.",
+        technologies: ["React.js", "Next.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Vercel"],
         features: [
-            "Secure Authentication & Authorization (JWT)",
-            "Real-time Dashboard Analytics",
-            "Payment Gateway Integration (Stripe)",
-            "Role-based Access Control (RBAC)",
-            "Responsive & Adaptive UI"
+            "Expense Tracking & Budget Management",
+            "Smart Analytics & Visualizations",
+            "Goal Setting & Progress Tracking",
+            "Family Sync & Shared Wallets",
+            "Secure Authentication (256-bit encryption)",
+            "Responsive Dashboard UI"
         ],
-        liveLink: "https://example.com",
-        githubClient: "https://github.com/example/client",
-        githubServer: "https://github.com/example/server",
-        images: [WorkImage, WorkImage, WorkImage],
-        color: "#1a1a1a"
+        liveLink: "https://money-tracker-eta-two.vercel.app/",
+        githubClient: "https://github.com/AH-Muzahid/Finance-Management-App",
+        githubServer: "",
+        images: [P1Home, P1Dash, P1Add, P1Profile],
+        color: "#243622ff"
     },
     {
         id: 2,
-        title: "Project Title 2",
-        category: "Design System",
-        client: "Creative Studio",
-        year: "2024",
-        description: "Built a comprehensive design system to unify the brand's digital presence. While primarily a frontend focus, it integrates with a Node.js backend for asset management.",
-        challenge: "Ensuring consistency across diverse platforms (Web, iOS, Android) while allowing for platform-specific patterns.",
-        solution: "We adopted a token-based architecture using Style Dictionary. A custom React component library was built and published to a private NPM registry.",
-        technologies: ["React.js", "Storybook", "Typescript", "Node.js", "Rollup"],
+        title: "LoanLink - Loan Management System",
+        category: "Full Stack Development",
+        client: "Personal Project",
+        year: "2025",
+        description: "A seamless, full-stack micro-finance platform designed to simplify loan applications and management. Users can browse loan categories, calculate EMIs, and track their application status in real-time, while administrators have powerful tools to review and manage requests.",
+        challenge: "The primary challenge was to build a secure and intuitive loan approval workflow that could handle user data sensitivity while providing instant feedback. Integrating complex financial calculations for the EMI feature and ensuring responsive design across all devices were also significant hurdles.",
+        solution: "Implemented a scalable MERN stack architecture with Firebase for robust authentication. React Query was used for efficient server-state management, ensuring real-time updates for loan statuses. The EMI calculator was built with precise financial algorithms, and the UI was vetted for maximum accessibility and responsiveness.",
+        technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Firebase", "TanStack Query"],
         features: [
-            "Atomic Design Components",
-            "Automated Visual Regression Testing",
-            "Dark Mode Support",
-            "Interactive Documentation"
+            "Streamlined Loan Application Process",
+            "Dynamic EMI Calculator",
+            "Real-time Application Status Tracking",
+            "Secure Authentication (Firebase)",
+            "Admin Dashboard for Loan Approvals",
+            "Responsive Design with DaisyUI"
         ],
-        liveLink: "https://example.com",
-        githubClient: "https://github.com/example/ds",
-        githubServer: "",
-        images: [WorkImage, WorkImage],
-        color: "#222222"
+        liveLink: "https://loan-link-two.vercel.app/",
+        githubClient: "https://github.com/AH-Muzahid/LoanLink",
+        githubServer: "https://github.com/AH-Muzahid/LoanLink",
+        images: [P2Home, P2Dash, P2Emi, P2Foot],
+        color: "#25482eff"
     },
     {
         id: 3,
-        title: "Project Title 3",
-        category: "E-Commerce",
-        client: "Fashion Brand",
-        year: "2025",
-        description: "A seamless e-commerce experience designed to maximize conversion rates. Includes a full admin panel for inventory management.",
-        challenge: "Balancing high-quality imagery with fast page load times and mobile performance.",
-        solution: "Utilized modern image formats, lazy loading, and edge caching. The backend uses a custom caching layer with Redis to speed up product queries.",
-        technologies: ["Next.js", "MongoDB", "Redis", "Stripe", "Framer Motion"],
+        title: "GameHub - React Gaming Website",
+        category: "Frontend Development",
+        client: "Personal Project",
+        year: "2024",
+        description: "A modern, responsive gaming platform where users can discover, explore, and learn about popular games. It features an immersive dark-themed UI with smooth animations and a comprehensive game catalog.",
+        challenge: "Creating a highly interactive and visually appealing interface that remains performant on mobile devices. Implementing secure authentication and dynamic routing for a seamless user journey was also a focus.",
+        solution: "Built with React and Vite for blazing fast performance. Tailwind CSS and DaisyUI were used to craft a responsive, gaming-centric design. Firebase handles secure authentication, while React Router manages dynamic navigation.",
+        technologies: ["React.js", "Vite", "Tailwind CSS", "Firebase", "DaisyUI", "Framer Motion"],
         features: [
-            "Advanced Product Filtering",
-            "Cart & Checkout Flow",
-            "Admin Dashboard for Inventory",
-            "User Reviews & Ratings"
+            "Interactive Game Catalog with Filters",
+            "Secure Authentication (Email/Google)",
+            "Dynamic Homepage with Auto-Sliding Banner",
+            "Responsive Dark-Themed UI",
+            "Game Details & Ratings System",
+            "Newsletter Subscription"
         ],
-        liveLink: "https://example.com",
-        githubClient: "https://github.com/example/shop",
-        githubServer: "https://github.com/example/shop-api",
-        images: [WorkImage, WorkImage, WorkImage],
-        color: "#2a2a2a"
+        liveLink: "https://gamehub-by-muzahid.netlify.app/",
+        githubClient: "https://github.com/AH-Muzahid/gamehub",
+        githubServer: "",
+        images: [P3Home, P3All, P3Profile],
+        color: "#25482eff"
     }
 ];

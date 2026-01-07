@@ -187,7 +187,7 @@ export default function ProjectDetails() {
                                             src={img}
                                             alt={`${project.title} detail ${index + 1}`}
                                             fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                            className="object-cover group-hover:scale-99 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none" />
                                     </div>

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const words = ["Hello", "Welcome to My Portfolio"];
+const words = ["Hello", "Welcome to My Devfolio"];
 
 export default function Preloader({ onComplete }) {
     const [index, setIndex] = useState(0);

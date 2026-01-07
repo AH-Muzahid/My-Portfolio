@@ -39,17 +39,11 @@ export default function HeroBackground() {
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{
                         opacity: 0.45,
-                        scale: 0.85,
-                        rotate: 360,
-                        x: [0, 300, -300, 150, -150, 0],
-                        y: [0, -150, 150, -100, 100, 0]
+                        scale: 0.85
                     }}
                     transition={{
                         opacity: { duration: 1.5 },
-                        scale: { duration: 1.5 },
-                        rotate: { duration: 150, repeat: Infinity, ease: "linear" },
-                        x: { duration: 50, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" },
-                        y: { duration: 60, repeat: Infinity, ease: "easeInOut", repeatType: "mirror" }
+                        scale: { duration: 1.5 }
                     }}
                     className="w-full max-w-[800px] max-h-[800px] flex items-center justify-center"
                 >
