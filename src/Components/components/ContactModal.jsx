@@ -41,7 +41,7 @@ export default function ContactModal({ isOpen, onClose }) {
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: true,
-                
+
                     });
                     setTimeout(() => {
                         onClose();
@@ -64,7 +64,7 @@ export default function ContactModal({ isOpen, onClose }) {
                     <Dock magnification={60} distance={100} className="mt-0 border-none ">
                         {[
                             { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/ali-hasan-muzahid/' },
-                            { icon: <FaWhatsapp />, url: 'https://wa.me/01312009084' },
+                            { icon: <FaWhatsapp />, url: 'https://wa.me/8801312009084' },
                             { icon: <FaFacebook />, url: 'https://www.facebook.com/ah.muzahid.2025/' },
                             { icon: <FaGithub />, url: 'https://github.com/AH-Muzahid' }
                         ].map((social, index) => (

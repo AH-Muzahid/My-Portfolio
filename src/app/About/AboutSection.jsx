@@ -87,7 +87,7 @@ export default function About() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
             <MaskedReveal delay={0.6}>
               <a
-                href="https://wa.me/01312009084"
+                href="https://wa.me/8801312009084"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#10b94c] hover:bg-[#0e9f41] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-[#10b94c]/30 transform hover:-translate-y-1 block text-center"

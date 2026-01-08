@@ -63,7 +63,7 @@ export default function Hero() {
 
             <SocialDock />
             <Clock />
-            <p>Based in Dhaka, BD</p>
+            <p className="hidden md:block" >Based in Dhaka, BD</p>
           </MaskedReveal>
 
           <div className="flex justify-center">

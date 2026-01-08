@@ -9,7 +9,7 @@ export default function SocialDock() {
             <Dock magnification={50} distance={100} direction="vertical" className="mt-0 border-none bg-transparent">
                 {[
                     { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/ali-hasan-muzahid/' },
-                    { icon: <FaWhatsapp />, url: 'https://wa.me/+8801312009084' },
+                    { icon: <FaWhatsapp />, url: 'https://wa.me/8801312009084' },
                     { icon: <FaFacebook />, url: 'https://www.facebook.com/ah.muzahid.2025/' },
                     { icon: <FaGithub />, url: 'https://github.com/AH-Muzahid' }
                 ].map((social, index) => (
