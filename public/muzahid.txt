@@ -1,0 +1,20 @@
+Muzahid - Ali Hasan Muzahid
+Full Stack Developer Portfolio
+
+About Muzahid:
+Muzahid (Ali Hasan Muzahid) is a professional Full Stack Developer based in Dhaka, Bangladesh.
+
+Muzahid specializes in:
+- MERN Stack Development (MongoDB, Express.js, React.js, Node.js)
+- Next.js Application Development
+- Modern Web Development
+- Scalable Web Applications
+- High-Performance Solutions
+
+Contact Muzahid:
+Website: https://muzahid.vercel.app
+GitHub: https://github.com/AH-Muzahid
+LinkedIn: https://www.linkedin.com/in/ali-hasan-muzahid/
+Facebook: https://www.facebook.com/ah.muzahid.2025/
+
+Muzahid Portfolio - Showcasing Projects by Ali Hasan Muzahid
