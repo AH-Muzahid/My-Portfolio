@@ -43,8 +43,9 @@ export default function Service() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="relative bg-gradient-to-br from-[#1a3d26] to-[#0f2416] rounded-[30px] md:rounded-[50px] p-6 md:p-12 lg:p-16 overflow-hidden shadow-2xl"
+                    className="relative bg-gradient-to-br from-[#1a3d26] via-[#12271a] to-[#0b100d] rounded-[30px] md:rounded-[50px] p-6 md:p-12 lg:p-16 overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.5)] border border-white/5"
                 >
+                    <div className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3Y%3Cfilter id='noiseFilter'%3Y%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3Y%3C/filter%3Y%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3Y%3C/svg%3Y")`}}></div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
 
                         {/* Left Content */}
@@ -88,7 +89,7 @@ export default function Service() {
                                             key={index}
                                             initial={{ y: -50, opacity: 0, rotate: 0 }}
                                             whileInView={{ y: 0, opacity: 1, rotate: rotate }}
-                                            viewport={{ once: false, margin: "100px" }}
+                                            viewport={{ once: true, margin: "100px" }}
                                             transition={{
                                                 type: "spring",
                                                 damping: 15,
@@ -96,8 +97,15 @@ export default function Service() {
                                                 mass: 1,
                                                 delay: delay
                                             }}
-                                            whileHover={{ scale: 1.1, rotate: 0, backgroundColor: "#fff", color: "#154628", zIndex: 10 }}
-                                            className="bg-white/90 backdrop-blur-sm text-[#154628] px-4 py-2 md:px-8 md:py-3 rounded-full text-xs md:text-base font-semibold shadow-lg cursor-pointer transition-colors"
+                                            whileHover={{ 
+                                                scale: 1.1, 
+                                                rotate: 0, 
+                                                backgroundColor: "#00d150", 
+                                                color: "#fff", 
+                                                zIndex: 10,
+                                                boxShadow: "0 20px 40px rgba(0,209,80,0.3)"
+                                            }}
+                                            className="bg-white/10 backdrop-blur-md text-white border border-white/10 px-4 py-2 md:px-8 md:py-3 rounded-full text-xs md:text-base font-medium shadow-xl cursor-pointer transition-all duration-300"
                                         >
                                             {service}
                                         </motion.div>

@@ -20,12 +20,13 @@ const Card = ({ i, id, title, description, technologies, src, url, color, progre
     <div ref={container} className="h-[80vh] md:h-screen flex items-start justify-center sticky top-0 pt-24 md:pt-32">
       <motion.div
         style={{ scale, top: `calc(${i * 25}px)` }}
-        className="flex flex-col relative h-[500px] md:h-[600px] w-[95%] md:w-[90%] lg:w-[1200px] rounded-[24px] md:rounded-[30px] p-6 md:p-12 origin-top shadow-2xl border border-white/5"
+        className="flex flex-col relative h-[500px] md:h-[600px] w-[95%] md:w-[90%] lg:w-[1200px] rounded-[24px] md:rounded-[30px] p-6 md:p-12 origin-top shadow-[0_50px_100px_rgba(0,0,0,0.4)] border border-white/10 backdrop-blur-xl overflow-hidden"
       >
         <div
-          className="absolute inset-0 rounded-[24px] md:rounded-[30px] -z-10"
+          className="absolute inset-0 rounded-[24px] md:rounded-[30px] -z-10 opacity-90"
           style={{ backgroundColor: color }}
         />
+        <div className="absolute inset-0 -z-10 opacity-[0.03] pointer-events-none mix-blend-overlay" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3Y%3Cfilter id='noiseFilter'%3Y%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3Y%3C/filter%3Y%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3Y%3C/svg%3Y")`}}></div>
 
         <div className="flex flex-col md:flex-row h-full gap-6 md:gap-12">
           {/* Image Container */}

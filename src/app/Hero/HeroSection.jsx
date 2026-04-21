@@ -42,7 +42,7 @@ export default function Hero() {
               initial={{ y: "110%", rotateX: -20 }}
               animate={{ y: 0, rotateX: 0 }}
               transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.4 }}
-              className="will-change-transform text-[80px] sm:text-[120px] md:text-[180px] lg:text-[230px] xl:text-[280px] font-black text-[#e8f7fc] leading-[0.85] tracking-tighter"
+              className="will-change-transform text-[80px] sm:text-[120px] md:text-[180px] lg:text-[230px] xl:text-[280px] font-black text-[#e8f7fc] leading-[0.85] tracking-tighter drop-shadow-[0_0_30px_rgba(232,247,252,0.15)]"
             >
               Muzahid
               <span className="sr-only"> - AH Muzahid, Ali Hasan Muzahid, Full Stack Developer, ahmuzahi</span>

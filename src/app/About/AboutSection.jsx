@@ -11,7 +11,10 @@ export default function About() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="about" className="w-full bg-gradient-to-b from-[#164b2b] to-[#1e1e1e] py-16 px-4 md:px-8 lg:px-16 xl:px-24">
+    <section id="about" className="w-full bg-[#0b0b0b] py-24 px-4 md:px-8 lg:px-16 xl:px-24 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-[#164b2b]/30 to-transparent -z-10" />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay -z-10" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3Y%3Cfilter id='noiseFilter'%3Y%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3Y%3C/filter%3Y%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3Y%3C/svg%3Y")`}}></div>
       <div className="max-w-4xl mx-auto text-center mb-16">
         <div className="flex justify-center mb-6">
           <MaskedReveal>
