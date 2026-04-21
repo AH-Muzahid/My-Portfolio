@@ -45,13 +45,14 @@ export default function Hero() {
               className="will-change-transform text-[80px] sm:text-[120px] md:text-[180px] lg:text-[230px] xl:text-[280px] font-black text-[#e8f7fc] leading-[0.85] tracking-tighter"
             >
               Muzahid
+              <span className="sr-only"> - AH Muzahid, Ali Hasan Muzahid, Full Stack Developer, ahmuzahi</span>
             </motion.h1>
           </div>
 
           <div className="mt-8 md:mt-10 flex justify-center">
             <MaskedReveal delay={0.8} className="max-w-3xl">
               <div className="text-lg md:text-2xl lg:text-3xl text-zinc-300 leading-relaxed font-light text-center gap-2">
-                <span>Engineering scalable, high-performance web solutions with </span>
+                <p>Engineering scalable, high-performance web solutions with </p>
                 <FlipWords words={["Next.js", "React.js", "Node.js", "MongoDB", "Express.js", "Tailwind CSS"]} className="text-[#00d150] font-bold" />
               </div>
             </MaskedReveal>
@@ -81,13 +82,13 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mt-12 md:mt-16">
           <MaskedReveal delay={1.0}>
-            <Link href="#project" className="primary-btn hover:scale-105 active:scale-95 transition-all duration-300 text-sm md:text-base px-8 py-4 flex items-center justify-center">
+            <Link href="#project" aria-label="View portfolio projects" className="primary-btn hover:scale-105 active:scale-95 transition-all duration-300 text-sm md:text-base px-8 py-4 flex items-center justify-center">
               View My Work
             </Link>
           </MaskedReveal>
 
           <MaskedReveal delay={1}>
-            <button className="px-8 py-4 rounded-full border border-white/10 text-white/80 hover:bg-white/5 hover:text-white transition-all duration-300 backdrop-blur-sm text-sm md:text-base tracking-wide">
+            <button aria-label="Download CV" className="px-8 py-4 rounded-full border border-white/10 text-white/80 hover:bg-white/5 hover:text-white transition-all duration-300 backdrop-blur-sm text-sm md:text-base tracking-wide">
               Download CV
             </button>
           </MaskedReveal>

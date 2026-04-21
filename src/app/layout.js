@@ -9,15 +9,15 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 export const metadata = {
   metadataBase: new URL('https://muzahid.vercel.app'),
   title: {
-    default: "Muzahid - Ali Hasan Muzahid | Full Stack Developer Portfolio",
-    template: "%s | Muzahid - Ali Hasan Muzahid"
+    default: "AH Muzahid - Ali Hasan Muzahid | Full Stack Developer Portfolio",
+    template: "%s | AH Muzahid - Ali Hasan Muzahid"
   },
-  description: "Muzahid (Ali Hasan Muzahid) - Professional Full Stack Developer from Dhaka, Bangladesh. Expert in MERN Stack (MongoDB, Express.js, React.js, Node.js), Next.js, and modern web development. Muzahid specializes in building scalable, high-performance web applications. Portfolio showcasing projects by Muzahid.",
+  description: "AH Muzahid (Ali Hasan Muzahid) - Professional Full Stack Developer from Dhaka, Bangladesh. Expert in MERN Stack (MongoDB, Express.js, React.js, Node.js), Next.js, and modern web development. AH Muzahid specializes in building scalable, high-performance web applications. Portfolio showcasing projects by AH Muzahid.",
   keywords: [
     // Primary Keywords
-    "Muzahid", "Ali Hasan Muzahid", "AH Muzahid", "Muzahid Developer", "Muzahid Portfolio",
+    "AH Muzahid", "ahmuzahi", "ah muzahid", "Muzahid", "Ali Hasan Muzahid", "Muzahid Developer", "Muzahid Portfolio",
     // Work-related
-    "Muzahid Work", "Muzahid Projects", "Muzahid Web Developer", "Muzahid Full Stack",
+    "Muzahid Work", "Muzahid Projects", "Muzahid Web Developer", "Muzahid Full Stack", "ahmuzahid",
     // Location-based
     "Muzahid Bangladesh", "Muzahid Dhaka", "Web Developer Dhaka Bangladesh",
     // Technology-specific
@@ -26,22 +26,22 @@ export const metadata = {
     "Full Stack Developer", "MERN Stack Developer", "Next.js Developer", "React Developer",
     "JavaScript Developer", "Web Developer Bangladesh", "Software Engineer Bangladesh",
     // General
-    "Ali Hasan Muzahid Portfolio", "Muzahid Dev", "Muzahid Software Engineer"
+    "Ali Hasan Muzahid Portfolio", "Muzahid Dev", "Muzahid Software Engineer", "ahmuzahi dev"
   ],
-  authors: [{ name: "Ali Hasan Muzahid (Muzahid)" }],
-  creator: "Muzahid - Ali Hasan Muzahid",
-  publisher: "Ali Hasan Muzahid",
+  authors: [{ name: "AH Muzahid (Ali Hasan Muzahid)" }],
+  creator: "AH Muzahid - Ali Hasan Muzahid",
+  publisher: "AH Muzahid - Ali Hasan Muzahid",
   openGraph: {
-    title: "Muzahid - Ali Hasan Muzahid | Full Stack Developer Portfolio",
-    description: "Muzahid is a professional Full Stack Developer specializing in MERN Stack and Next.js. Building scalable, high-performance web applications. Portfolio by Muzahid (Ali Hasan Muzahid).",
+    title: "AH Muzahid - Ali Hasan Muzahid | Full Stack Developer Portfolio",
+    description: "AH Muzahid is a professional Full Stack Developer specializing in MERN Stack and Next.js. Building scalable, high-performance web applications. Portfolio by AH Muzahid (Ali Hasan Muzahid).",
     url: 'https://muzahid.vercel.app',
-    siteName: 'Muzahid Portfolio - Ali Hasan Muzahid',
+    siteName: 'AH Muzahid Portfolio - Ali Hasan Muzahid',
     images: [
       {
         url: '/assets/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Muzahid - Ali Hasan Muzahid - Full Stack Developer',
+        alt: 'AH Muzahid - Ali Hasan Muzahid - Full Stack Developer',
       },
     ],
     locale: 'en_US',
@@ -49,8 +49,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Muzahid - Ali Hasan Muzahid | Full Stack Developer",
-    description: "Muzahid specializes in building scalable web applications with MERN Stack and Next.js. Portfolio by Ali Hasan Muzahid.",
+    title: "AH Muzahid - Ali Hasan Muzahid | Full Stack Developer",
+    description: "AH Muzahid specializes in building scalable web applications with MERN Stack and Next.js. Portfolio by AH Muzahid.",
     images: ['/assets/og-image.png'],
     creator: "@AHMuzahid",
   },
@@ -78,7 +78,7 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Ali Hasan Muzahid",
-    "alternateName": ["Muzahid", "AH Muzahid", "Muzahid Developer"],
+    "alternateName": ["AH Muzahid", "ahmuzahi", "ah muzahid", "Muzahid", "Muzahid Developer"],
     "url": "https://muzahid.vercel.app",
     "image": "https://muzahid.vercel.app/assets/About2.png",
     "sameAs": [

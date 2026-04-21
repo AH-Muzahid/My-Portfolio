@@ -90,6 +90,8 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={toggleMenu}
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
             className="md:hidden flex flex-col items-center justify-center w-8 h-8 space-y-1 pr-4"
           >
             <motion.span

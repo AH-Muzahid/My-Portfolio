@@ -1,28 +1,23 @@
-export default function sitemap() {
-    return [
-        {
-            url: 'https://muzahid.vercel.app',
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 1,
-        },
-        {
-            url: 'https://muzahid.vercel.app/projects/1',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://muzahid.vercel.app/projects/2',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://muzahid.vercel.app/projects/3',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-    ]
+import { projects } from '@/Data/projects';
+
+export default async function sitemap() {
+  const baseUrl = 'https://muzahid.vercel.app';
+
+  // Project routes
+  const projectUrls = projects.map((project) => ({
+    url: `${baseUrl}/projects/${project.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  return [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    ...projectUrls,
+  ];
 }
