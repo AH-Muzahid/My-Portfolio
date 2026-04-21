@@ -24,9 +24,29 @@ const IconWrapper = ({
 );
 
 const IconGrid = () => {
+    const [isVisible, setIsVisible] = useState(true);
     const [activeId, setActiveId] = useState(1);
     const canvasRef = useRef(null);
+    const containerRef = useRef(null);
     const particlesRef = useRef([]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.1 }
+        );
+        if (containerRef.current) observer.observe(containerRef.current);
+        return () => observer.disconnect();
+    }, [isVisible]);
+
+    // Rotate active icon
+    useEffect(() => {
+        if (!isVisible) return;
+        const interval = setInterval(() => {
+            setActiveId(prev => (prev % 8) + 1);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [isVisible]);
 
     // MERN Stack & Modern Tools - Actual Tech Logos
     const outerIcons = useMemo(() => [
@@ -63,6 +83,10 @@ const IconGrid = () => {
         if (!ctx) return;
         let animationFrameId;
         const render = () => {
+            if (!isVisible) {
+                animationFrameId = window.requestAnimationFrame(render);
+                return;
+            }
             ctx.clearRect(0, 0, svgSize, svgSize);
             particlesRef.current.forEach((p, index) => {
                 p.x += p.vx;
@@ -81,7 +105,7 @@ const IconGrid = () => {
         };
         render();
         return () => window.cancelAnimationFrame(animationFrameId);
-    }, []);
+    }, [ isVisible]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -179,8 +203,9 @@ const IconGrid = () => {
 };
 
 export default function NexusOrb() {
+    const containerRef = useRef(null);
     return (
-        <div className="w-full flex items-center justify-center font-sans p-4 sm:p-8 overflow-hidden">
+        <div ref={containerRef} className="w-full flex items-center justify-center font-sans p-4 sm:p-8 overflow-hidden">
             <style>
                 {`
                 @keyframes float {

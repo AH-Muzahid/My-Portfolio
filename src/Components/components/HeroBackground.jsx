@@ -2,7 +2,8 @@
 
 import { useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import NexusOrb from "@/Components/components/NexusOrb";
+import dynamic from "next/dynamic";
+const NexusOrb = dynamic(() => import("@/Components/components/NexusOrb"), { ssr: false });
 
 export default function HeroBackground() {
     const mouseX = useMotionValue(0);

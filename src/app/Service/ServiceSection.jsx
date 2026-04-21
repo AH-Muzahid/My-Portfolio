@@ -41,7 +41,7 @@ export default function Service() {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: false, margin: "-50px" }}
+                    viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="relative bg-gradient-to-br from-[#1a3d26] to-[#0f2416] rounded-[30px] md:rounded-[50px] p-6 md:p-12 lg:p-16 overflow-hidden shadow-2xl"
                 >
@@ -67,6 +67,7 @@ export default function Service() {
                                     src={ServiceImage}
                                     alt="Workspace setup"
                                     fill
+                                    unoptimized
                                     className="object-cover"
                                 />
                             </motion.div>
@@ -111,6 +112,7 @@ export default function Service() {
                                         src={ServiceImage}
                                         alt="Workspace setup"
                                         fill
+                                        unoptimized
                                         className="object-cover"
                                     />
                                 </div>

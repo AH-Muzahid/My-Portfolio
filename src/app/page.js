@@ -1,4 +1,3 @@
-"use client";
 import HeroSection from "./Hero/HeroSection";
 import About from "./About/AboutSection";
 import Logomarquee from "@/Components/components/Logomarquee";

@@ -7,7 +7,7 @@ export const MaskedReveal = ({ children, className = "", delay = 0, duration = 0
             className={className}
             initial={{ opacity: 0, y: 20, filter: "blur(12px)" }}
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{
                 duration: duration,
                 ease: "easeOut",

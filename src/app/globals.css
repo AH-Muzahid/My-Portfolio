@@ -36,11 +36,6 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
-  }
-
   body {
     font-family: var(--font-satoshi);
     background-color: #0b0b0b;

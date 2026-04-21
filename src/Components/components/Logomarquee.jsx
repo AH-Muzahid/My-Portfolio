@@ -68,7 +68,7 @@ const Marquee2 = ({ logos, speed = 30, direction = 'normal' }) => {
                 style={{ animationDuration: `${speed}s`, animationDirection: direction }}
             >
                 {/* 3 Sets for seamless loop */}
-                {[...logos, ...logos, ...logos, ...logos].map((logo, idx) => (
+                {[...logos, ...logos].map((logo, idx) => (
                     <div key={idx} className="w-[120px] h-[140px] flex-shrink-0 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:border-[#00d150]/50 hover:bg-white/10 transition-all duration-300">
                         <div className="w-12 h-12">
                             {logo.component}
@@ -89,7 +89,7 @@ const Marquee2 = ({ logos, speed = 30, direction = 'normal' }) => {
                      }
                      This requires TWO identical divs next to each other.
                  */}
-                {[...logos, ...logos, ...logos, ...logos].map((logo, idx) => (
+                {[...logos, ...logos].map((logo, idx) => (
                     <div key={idx} className="w-[120px] h-[140px] flex-shrink-0 flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl hover:border-[#00d150]/50 hover:bg-white/10 transition-all duration-300">
                         <div className="w-12 h-12">
                             {logo.component}

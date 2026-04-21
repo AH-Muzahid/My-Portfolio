@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
 const projects = [
   { id: 1, title: "Abstract Art", category: "Photography", img: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&q=80" },
@@ -9,6 +10,7 @@ const projects = [
 ];
 
 export default function ProjectGrid() {
+  const [ratios, setRatios] = useState({});
   return (
     <section className="py-24 px-6 md:px-12 bg-brand-black">
       {/* Section Header */}
@@ -29,18 +31,21 @@ export default function ProjectGrid() {
             className="group cursor-pointer"
           >
             {/* Image Container */}
-            <div className="image-container aspect-3/4 mb-4 bg-zinc-900">
+            <div className="image-container aspect-w-16 aspect-h-9 w-full max-w-xs sm:max-w-sm mb-4 bg-zinc-900 relative overflow-hidden">
               <Image
                 src={project.img}
                 alt={project.title}
-                width={100}
-                height={100}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                onLoadingComplete={(result) => setRatios(prev => ({ ...prev, [project.id]: `${result.naturalWidth}:${result.naturalHeight}` }))}
               />
               {/* Overlay on Hover */}
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                 <span className="text-white uppercase tracking-widest text-xs border border-white/40 px-4 py-2 rounded-full">View Project</span>
               </div>
+            {ratios[project.id] && (
+              <p className="text-xs text-gray-400 text-center mt-1">Ratio: {ratios[project.id]}</p>
+            )}
             </div>
 
             {/* Project Info */}
