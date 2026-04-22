@@ -88,9 +88,14 @@ export default function Hero() {
           </MaskedReveal>
 
           <MaskedReveal delay={1}>
-            <button aria-label="Download CV" className="px-8 py-4 rounded-full border border-white/10 text-white/80 hover:bg-white/5 hover:text-white transition-all duration-300 backdrop-blur-sm text-sm md:text-base tracking-wide">
+            <a 
+              href="/Resume_Muzahid.pdf" 
+              download="Resume_Muzahid.pdf"
+              aria-label="Download CV" 
+              className="px-8 py-4 rounded-full border border-white/10 text-white/80 hover:bg-white/5 hover:text-white transition-all duration-300 backdrop-blur-sm text-sm md:text-base tracking-wide inline-block"
+            >
               Download CV
-            </button>
+            </a>
           </MaskedReveal>
         </div>
 
