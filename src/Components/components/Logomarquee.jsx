@@ -32,7 +32,7 @@ const logos2 = [
     { id: 2, component: <LogoImage slug="firebase" title="Firebase" /> },
     { id: 3, component: <LogoImage slug="prisma" title="Prisma" /> },
     { id: 4, component: <LogoImage slug="docker" title="Docker" /> },
-    { id: 5, component: <LogoImage slug="amazonaws" title="AWS" /> },
+    { id: 5, component: <LogoImage slug="amazon-aws" title="AWS" /> },
     { id: 6, component: <LogoImage slug="git" title="Git" /> },
     { id: 7, component: <LogoImage slug="github" title="GitHub" /> },
     { id: 8, component: <LogoImage slug="figma" title="Figma" /> },

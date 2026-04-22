@@ -47,7 +47,7 @@ export default function ProjectDetailsView({ project, nextProject }) {
                                     initial={{ y: "100%" }}
                                     animate={{ y: 0 }}
                                     transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-                                    className="text-5xl md:text-8xl font-bold tracking-tight leading-[0.85] text-white uppercase"
+                                    className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] text-white uppercase"
                                 >
                                     {project.title}
                                 </motion.h1>
@@ -207,7 +207,7 @@ export default function ProjectDetailsView({ project, nextProject }) {
                     <div className="container mx-auto px-4">
                         <p className="text-zinc-500 uppercase tracking-widest text-sm mb-6">Next Project</p>
                         <Link href={`/projects/${nextProject.id}`} className="inline-block group">
-                            <h2 className="text-5xl md:text-8xl font-bold text-white group-hover:text-[#00d150] transition-colors duration-500 cursor-pointer">
+                            <h2 className="text-4xl md:text-6xl font-bold text-white group-hover:text-[#00d150] transition-colors duration-500 cursor-pointer">
                                 {nextProject.title}
                             </h2>
                             <div className="h-1 w-0 bg-[#00d150] mx-auto mt-4 group-hover:w-full transition-all duration-500"></div>
