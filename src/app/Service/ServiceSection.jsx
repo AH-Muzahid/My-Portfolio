@@ -23,19 +23,18 @@ const services = [
     "Technical Consulting"
 ];
 
+import { SectionHeader } from "@/Components/components/SectionHeader";
+
 export default function Service() {
     return (
-        <section id="service" className="md:min-h-screen md:flex md:items-center md:justify-center bg-[#1f1f1f] relative overflow-hidden py-10 ">
+        <section id="service" className="md:min-h-screen md:flex md:items-center md:justify-center bg-[#1f1f1f] relative overflow-hidden py-24 ">
             <div className="container mx-auto px-4 md:px-8 max-w-7xl w-full">
-
-                {/* Section Title - Compact margin */}
-                <div className="flex justify-center mb-8 md:mb-12">
-                    <MaskedReveal>
-                        <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
-                            Services
-                        </h1>
-                    </MaskedReveal>
-                </div>
+                <SectionHeader 
+                    tag="Capabilities" 
+                    title="Expertise & Solutions" 
+                    align="left"
+                    mb="mb-12"
+                />
 
                 {/* Main Card Container */}
                 <motion.div

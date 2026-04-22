@@ -4,6 +4,7 @@ import Logomarquee from "@/Components/components/Logomarquee";
 import Navber from "./Navber/Navber";
 import WorkSection from './Work/WorkSection';
 import Service from './Service/ServiceSection';
+import Process from "./Process/ProcessSection";
 import Contact from "./Contact/ContactSection";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Logomarquee />
         <WorkSection />
         <Service />
+        <Process />
         <Contact />
       </main>
     </div>

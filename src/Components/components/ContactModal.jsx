@@ -57,11 +57,11 @@ export default function ContactModal({ isOpen, onClose }) {
     };
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title="Let's Connect with Muzahid" size="lg">
-            <div className="space-y-6">
+        <Modal isOpen={isOpen} onClose={onClose} title="Let's Connect with Muzahid" size="md">
+            <div className="space-y-4">
                 {/* Social Dock - Horizontal */}
-                <div className="flex justify-center pb-4 border-b border-white/10">
-                    <Dock magnification={60} distance={100} className="mt-0 border-none ">
+                <div className="flex justify-center pb-2 border-b border-white/5">
+                    <Dock magnification={50} distance={80} className="mt-0 border-none bg-transparent">
                         {[
                             { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/ali-hasan-muzahid/' },
                             { icon: <FaWhatsapp />, url: 'https://wa.me/8801312009084' },
@@ -132,7 +132,6 @@ export default function ContactModal({ isOpen, onClose }) {
                     </div>
                 </form>
             </div>
-            <ToastContainer />
         </Modal>
     );
 }

@@ -3,19 +3,25 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoClose } from "react-icons/io5";
+import { useLenis } from 'lenis/react';
 
 export default function Modal({ isOpen, onClose, title, children, size = "md" }) {
-    // Prevent body scroll when modal is open
+    const lenis = useLenis();
+
+    // Handle scroll locking
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
+            lenis?.stop();
         } else {
             document.body.style.overflow = "unset";
+            lenis?.start();
         }
         return () => {
             document.body.style.overflow = "unset";
+            lenis?.start();
         };
-    }, [isOpen]);
+    }, [isOpen, lenis]);
 
     const sizes = {
         sm: "max-w-md",
@@ -29,18 +35,19 @@ export default function Modal({ isOpen, onClose, title, children, size = "md" })
         <AnimatePresence>
             {isOpen && (
                 <>
-                    {/* Backdrop (Non-clickable to close) */}
+                    {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm"
+                        onClick={onClose}
+                        className="fixed inset-0 z-[9998] bg-black/80 backdrop-blur-md cursor-pointer"
                     />
 
                     {/* Modal Content */}
-                    <div className="fixed inset-0 z-[101] flex items-center justify-center p-4 overflow-y-auto pointer-events-none">
+                    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6 overflow-y-auto pointer-events-none">
                         {/* Scrollable Container Wrapper */}
-                        <div className={`relative w-full ${sizes[size]} my-8 pointer-events-auto`}>
+                        <div className={`relative w-full ${sizes[size]} my-auto pointer-events-auto`}>
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}

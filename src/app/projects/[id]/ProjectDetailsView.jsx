@@ -5,11 +5,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { MaskedReveal } from "../../../Components/ui/MaskedReveal";
 import { ArrowLeft, Globe, Server, Code } from "lucide-react";
+import { useLenis } from "lenis/react";
 
 export default function ProjectDetailsView({ project, nextProject }) {
+    const lenis = useLenis();
+
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: "instant" });
-    }, [project.id]);
+        if (lenis) {
+            lenis.scrollTo(0, { immediate: true });
+        }
+    }, [project.id, lenis]);
 
     return (
         <main className="min-h-screen bg-[#0b0b0b] text-white selection:bg-[#00d150] selection:text-black">
@@ -27,11 +32,12 @@ export default function ProjectDetailsView({ project, nextProject }) {
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
                         <div className="max-w-4xl">
                             <MaskedReveal>
-                                <div className="flex items-center gap-4 mb-4">
-                                    <span className="px-3 py-1 rounded-full border border-white/20 text-xs tracking-widest uppercase text-zinc-400">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <span className="text-[#00d150] uppercase tracking-[0.4em] text-[10px] font-black">
                                         {project.category}
                                     </span>
-                                    <span className="text-xs tracking-widest uppercase text-zinc-500">
+                                    <span className="w-1 h-1 rounded-full bg-white/20"></span>
+                                    <span className="text-[10px] tracking-widest uppercase text-zinc-500 font-bold">
                                         {project.year}
                                     </span>
                                 </div>
@@ -41,7 +47,7 @@ export default function ProjectDetailsView({ project, nextProject }) {
                                     initial={{ y: "100%" }}
                                     animate={{ y: 0 }}
                                     transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-                                    className="text-5xl md:text-7xl font-black tracking-tight leading-none text-white"
+                                    className="text-5xl md:text-8xl font-bold tracking-tight leading-[0.85] text-white uppercase"
                                 >
                                     {project.title}
                                 </motion.h1>
@@ -201,7 +207,7 @@ export default function ProjectDetailsView({ project, nextProject }) {
                     <div className="container mx-auto px-4">
                         <p className="text-zinc-500 uppercase tracking-widest text-sm mb-6">Next Project</p>
                         <Link href={`/projects/${nextProject.id}`} className="inline-block group">
-                            <h2 className="text-5xl md:text-8xl font-black text-white group-hover:text-[#00d150] transition-colors duration-500 cursor-pointer">
+                            <h2 className="text-5xl md:text-8xl font-bold text-white group-hover:text-[#00d150] transition-colors duration-500 cursor-pointer">
                                 {nextProject.title}
                             </h2>
                             <div className="h-1 w-0 bg-[#00d150] mx-auto mt-4 group-hover:w-full transition-all duration-500"></div>
